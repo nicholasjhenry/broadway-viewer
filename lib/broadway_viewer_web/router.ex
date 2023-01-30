@@ -37,7 +37,10 @@ defmodule BroadwayViewerWeb.Router do
     scope "/dev" do
       pipe_through :browser
 
-      live_dashboard "/dashboard", metrics: BroadwayViewerWeb.Telemetry
+      live_dashboard "/dashboard", metrics: BroadwayViewerWeb.Telemetry,
+        additional_pages: [
+          broadway: BroadwayDashboard
+        ]
     end
   end
 end
